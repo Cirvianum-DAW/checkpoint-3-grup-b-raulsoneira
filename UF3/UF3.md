@@ -63,3 +63,5 @@ Fes un cop d'ull al fitxer `productes.js` i afegeix el codi necessari per:
   - El nom del producte
   - La quantitat i el preu total (preu unitari \* quantitat).
 - (2p) Finalment hauràs de mostrar el preu total de la comanda a sota de la llista de productes.
+
+Un cop més, hauràs de realitzar tot el codi a través de JS. Evita modificar el codi HTML directament a no ser que no trobis cap altra solució.
