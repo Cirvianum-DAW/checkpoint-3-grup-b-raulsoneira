@@ -50,7 +50,6 @@ document
     // Validacions dels camps del formulari.
 
     // Validar que el campname i surname tinguin un min i max de caràcters.
-
     if (name.length < 3 || !name.length > 50) {
       alert("El nom han de tenir com a mínim 3 caràcters i menys de 50");
       return;
@@ -61,7 +60,7 @@ document
       return;
     }
 
-    // Exemple de validació: L'email ha de tenir un format vàlid
+    // Exemple de validació: L'name ha de tenir un format vàlid
     const Regex = /[0-9]/;
     if (Regex.test(name)) {
       alert("No poden contenir números el camp nom");
@@ -80,16 +79,19 @@ document
       return;
     }
 
+    // ha de tenir alguna opcio seleccionada
     if (!gender) {
       alert("Valor incorrecte");
       return;
     }
 
+    // Validació, ha de ser major d'edat
     if (age < 18) {
       alert("Has de ser major de edat");
       return;
     }
 
+    // El missatge no pot ser més gran de 200 paraules i més petit que de 10
     if (message.length < 10 || !message.length > 200) {
       alert("El text a ha de tenir com a mínim 10 caràcters i com a màxim 200");
       return;
@@ -125,19 +127,19 @@ const products = [
   { category: "Llar", price: 199.99, name: "Aspiradora" },
 ];
 
+// Seleccionem el camp selector
 const selector = document.getElementById("product");
 
+//Fem un bucle per anar afegin els productes duns de l'elelement creat option.
 products.forEach((product) => {
   const producte = document.createElement("option");
   producte.innerText = product.name;
   selector.appendChild(producte);
 });
 
-function productesQuantitat(params) {
-  const idProducte = document.querySelector("#product").value;
+const productId = document.getElementById("product").value;
 
-  const quantitat = document.getElementById("quantity");
-  quantitat.value = "1";
-}
+const quantitat = document.getElementById("quantity");
+quantitat.value = "1";
 
 // find
