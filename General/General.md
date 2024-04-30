@@ -32,37 +32,20 @@ Ara que ja tens la informació dels Pokémon, fes una funció que, donat un ID d
 
 - Has de fer servir la funció que has creat a l'exercici anterior per a obtenir la informació del Pokémon.
 - Has de mostrar la informació del Pokémon a la pàgina web. Preferentment creant els continguts de manera dinàmica.
-- Hauràs de mostrar les habilitats del Pokemon en anglès. Veuràs que l'endpoint de l'API et retorna les habilitats en diferents idiomes.
+- Hauràs de mostrar el nom de les habilitats del Pokémon.
 - Has de mostrar la imatge del Pokémon a la pàgina web. Pots fer servir la imatge que vulguis (la primera, la segona, etc.).
+- Aquesta part és més embolicada... deixa-ho pel final potser! Hauràs d'afegir, a sota el nom de l'habilitat, la descripció d'aquesta (`effect_entries`) en anglès (compte! per obtenir la descripció hauràs de fer una altra petició a la URL que t'indiquen sota la propietat `abilities` i veuràs que l'endpoint de l'API et retorna les habilitats en diferents idiomes!).
 - Comprova que la informació es mostra correctament a la pàgina web.
 
-Et proposo una estructura HTML senzilla per a mostrar la informació del Pokémon:
-
-```html
-<div id="pokemon">
-  <h2 id="name"></h2>
-  <p id="height"></p>
-  <p id="weight"></p>
-  <div id="abilities">
-    <h3>Habilities</h3>
-    <ul>
-      <li>
-        <h4>Nom de l'habilitat</h4>
-        <p>Descripció de l'habilitat</p>
-      </li>
-    </ul>
-  </div>
-  <img id="sprite" src="" alt="" />
-</div>
-```
+Tens a disposició un HTML amb una estructura senzilla i alguns estils de Tailwind per a mostrar la informació del Pokémon:
 
 ## Repte 3 - Interfície millorada (1p)
 
 Finalment anem a millorar una mica la interfície de la nostra pàgina web. Afegeix els següents elements:
 
-- Un botó per a realitzar la cerca del Pokémon. Quan l'usuari faci clic al botó, s'ha de mostrar la informació del Pokémon corresponent a l'ID o el nom del Pokemon introduït.
+- Un camp i un botó per a realitzar la cerca del Pokémon. Quan l'usuari faci clic al botó, s'ha de mostrar la informació del Pokémon corresponent a l'ID o el nom del Pokemon introduït.
 - Un missatge d'error si l'usuari introdueix un ID de Pokémon que no existeix a la base de dades o si hi ha algun problema amb la connexió a l'API.
 
 ## Repte 4 - Recursivitat - Pokemons amb les mateixes habilitats (2p)
 
-- A sota de la informació del Pokémon que s'està mostrant, hauràs de mostrar la llista dels Pokemons que tenen les mateixes habilitats amb el mateix format que has fet amb el Pokémon principal. És a dir, per a cada Pokémon amb l'habilitat compartida, hauràs de mostrar el seu nom, alçada, pes, habilitats i imatge. Aquest llistat de Pokemons el trobaràs a l'endpoint de l'habilitat dins l'objecte `pokemon`. Veuràs que cada habilitat té un `url` que et permetrà obtenir la informació dels Pokemons que tenen aquesta habilitat. Per obtenir la nota màxima d'aquest exercici, hauràs de fer servir Promise.all per a obtenir la informació de tots els Pokemons amb les mateixes habilitats.
+- A sota de la informació del Pokémon que s'està mostrant, hauràs de mostrar una llista dels Pokemons que tenen les mateixes habilitats. Simplement has de mostrar el Nom i la Foto d'aquest. Aquest llistat de Pokemons el trobaràs a l'endpoint de l'habilitat dins l'objecte `pokemon`. Veuràs que cada habilitat té un `url` que et permetrà obtenir la informació dels Pokemons que tenen aquesta habilitat. Per obtenir la nota màxima d'aquest exercici, hauràs de fer servir Promise.all per a obtenir la informació de tots els Pokemons amb les mateixes habilitats. Intenta pensar com aprofitar el cicle de vida del codi actual per a obtenir aquesta informació.
