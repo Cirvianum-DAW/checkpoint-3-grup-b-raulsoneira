@@ -16,7 +16,7 @@ Llegeix abans de començar tots els reptes, també el Repte 2, de manera que pug
 
 ## Repte 1 - Validació de Formularis (4p)
 
-Crea un fitxer `validacio.js` i general el codi necessari per:
+Tens un fitxer anomenat `validacions.js` ja associat a l'html. Hauràs de realitzar els següents passos:
 
 - **Totes les validacions les hauries de poder realitzar a través del teu codi JS**. No hauries de fer servir cap validació a través del codi HTML. Recorda que per evitar que HTML faci les seves pròpies validacions, pots fer servir l'atribut `novalidate` al formulari. **(0,5p)**
 
@@ -34,16 +34,7 @@ Crea un fitxer `validacio.js` i general el codi necessari per:
 - No poden contenir números (el regex necessari per aquesta validació és `/[0-9]/`)
 - L'adreça de correu electrònic ha de tenir com a mínim un caràcter `@` i un caràcter `.`. El regex: `/^[^@]+@[^@]+\.[^@]+$/`
 
-Pots fer servir un altre mètode si vols però seria interessant crear un missatge d'error i fer-lo aparèix (o fer desaparèixer si és correcte) a través d'un `div` amb un missatge d'error a sota de cada camp de text. Ex amb JS:
-
-```js
-const error = document.createElement("div");
-error.textContent = "El nom ha de tenir com a mínim 3 caràcters i menys de 50.";
-// Pots crear-te alguna classe CSS per aquest error amb un color vermell per exemple
-error.classList.add("error");
-// Si fas servir 'parentNode' pots afegir l'error a sota del camp de text
-document.querySelector('input[name="nom"]').parentNode.appendChild(error);
-```
+Pots fer servir un altre mètode si vols però seria interessant crear un missatge d'error i fer-lo aparèix (o fer desaparèixer si és correcte) a través d'un `div` amb un missatge d'error a sota de cada camp de text. Tens un exemple al codi.
 
 ### Validacions - 2a Part (1p)
 
@@ -64,10 +55,12 @@ document.querySelector('input[name="nom"]').parentNode.appendChild(error);
 
 Fes un cop d'ull al fitxer `productes.js` i afegeix el codi necessari per:
 
-- **(1p)** Carregar els productes disponibles al formulari. Aquests hauran d'aparèixer com opcions de la llista de selecció de productes (`select`).
-- **(2p)** Quan l'usuari seleccioni un producte i una quantitat, aquest s'ha d'afegir a una llista de productes que es mostrarà a sota del formulari. Aquesta llista haurà de mostrar:
+- **(2p)** Carregar els productes disponibles al formulari. Aquests hauran d'aparèixer com opcions de la llista de selecció de productes (`select`).
+  - Quan un usuari hagi canviat/seleccionat un producte (pensa bé quin mètode faràs servir!), ha d'apareixer una quantitat per defecte de 1 i el preu unitari d'aquesta en el camp amb id `price`. Aquest preu harà d'anar canviant en funció del producte seleccionat.
+- **(2p)** Quan l'usuari seleccioni un producte i una quantitat, a través del botó "add-product" aquest s'ha d'afegir a una llista de productes que es mostrarà a sota del formulari.
+  Aquesta llista haurà de mostrar:
   - El nom del producte
   - La quantitat i el preu total (preu unitari \* quantitat).
-- **(2p)** Finalment hauràs de mostrar el preu total de la comanda a sota de la llista de productes.
-
-Un cop més, hauràs de realitzar tot el codi a través de JS. Evita modificar el codi HTML directament a no ser que no trobis cap altra solució.
+- **(1p)** Modifica i finalitza el formulari tenint en compte:
+- Assegura't que el formulari tingui un comportament lògic. No has de poder afegir un producte si no s'ha seleccionat un producte i una quantitat vàlida. Mira que només surtin dos decimals com a molt i no és necessari que verifiquis si ja s'ha afegit un producte a la llista. Es torna a fegir amb la quantitat i el preu final quan l'afegeix.
+- Es validen correctament tots els camps quan fem un submit i mostra un missatge perosnalitzat per l'usuari dient-li que la comanda s'ha realitzat correctament i l'import final que ha de pagar.
