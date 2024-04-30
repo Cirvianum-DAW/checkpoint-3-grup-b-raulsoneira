@@ -133,7 +133,11 @@ products.forEach((product) => {
   selector.appendChild(producte);
 });
 
-const producteActual = document.getElementById('')
-if (producte) {
+function productesQuantitat(params) {
+  const idProducte = document.querySelector("#product").value;
+
   const quantitat = document.getElementById("quantity");
+  quantitat.value = "1";
 }
+
+// find
