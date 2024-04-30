@@ -47,8 +47,6 @@ document
     const age = document.getElementById("age").value;
     const message = document.getElementById("message").value;
 
-    message;
-
     // Validacions dels camps del formulari.
 
     // Validar que el campname i surname tinguin un min i max de caràcters.
@@ -88,6 +86,11 @@ document
 
     if (age < 18) {
       alert("Has de ser major de edat");
+      return;
+    }
+
+    if (message.length < 10 || !message.length > 200) {
+      alert("El text a ha de tenir com a mínim 10 caràcters i com a màxim 200");
       return;
     }
   });
